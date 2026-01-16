@@ -71,27 +71,91 @@ En producción, esta variable debe apuntar a la URL del backend correspondiente.
 
 ---
 
-## ▶️ Cómo Correr el Frontend Localmente
+▶️ Inicialización del Proyecto Paso a Paso
+1. Clonar el Repositorio
 
-### 1. Instalar dependencias
+git clone https://github.com/benja85a/products-crud.git
 
-```bash
+cd products-crud
+
+🖥️ Inicializar el Backend
+2. Entrar a la carpeta del backend
+
+cd backend
+
+3. Configurar Variables de Entorno del Backend
+
+Crear un archivo .env dentro de la carpeta backend:
+
+DATABASE_URL=postgresql://usuario:password@host/dbname?sslmode=require
+PORT=3001
+
+La variable DATABASE_URL se obtiene desde el dashboard de Neon, en la sección de Connection Details.
+
+4. Instalar Dependencias del Backend
+
+Usando Bun:
+
+bun install
+
+5. Ejecutar Migraciones (si aplica)
+
+Si el proyecto incluye migraciones con Drizzle:
+
+bun run drizzle:migrate
+
+6. Ejecutar el Backend
+
+bun run dev
+
+Si todo está correcto, verás en la terminal algo como:
+
+Started development server: http://localhost:3001
+
+El backend quedará disponible en:
+
+http://localhost:3001
+
+🌐 Inicializar el Frontend
+7. Entrar a la carpeta del frontend
+
+Desde la raíz del proyecto:
+
+cd frontend
+
+8. Configurar Variables de Entorno del Frontend
+
+Crear un archivo .env en la carpeta frontend:
+
+VITE_API_BASE_URL=http://localhost:3001
+
+Esta variable permite que el frontend consuma correctamente la API del backend.
+
+9. Instalar Dependencias del Frontend
+
 npm install
-```
 
-### 2. Ejecutar en modo desarrollo
+10. Ejecutar el Frontend
 
-```bash
 npm run dev
-```
 
-La aplicación estará disponible en:
+El frontend estará disponible en:
 
-```
 http://localhost:5173
-```
 
 ---
+🔗 Flujo de Funcionamiento
+
+El backend corre en http://localhost:3001
+
+El frontend corre en http://localhost:5173
+
+El frontend consume la API REST del backend usando VITE_API_BASE_URL
+
+Las operaciones de crear, listar, buscar, editar y eliminar productos se realizan contra la base de datos en Neon
+
+Ambos servicios deben estar levantados al mismo tiempo.
+-----------------------
 
 ## 🔌 Funcionalidades Implementadas
 
@@ -115,22 +179,20 @@ http://localhost:5173
 
 ---
 
-## 🧪 Testing
+E2E Tests
 
-### Unit Tests
+Antes de ejecutar los tests E2E, asegúrate de que:
 
-```bash
-npm run test
-```
+El backend esté corriendo en http://localhost:3001
 
-### E2E Tests
+El frontend esté corriendo en http://localhost:5173
 
-```bash
+Ejecutar tests E2E:
+
 npm run test:e2e
-```
+
 
 Los tests cubren componentes clave y flujos principales de la aplicación.
-
 ---
 
 ## ☁️ Deployment
