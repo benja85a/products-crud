@@ -1,6 +1,6 @@
 import type { Product } from '../types/product.types';
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = 'http://localhost:3000/api/products';
 
 export const getProducts = async (search?: string): Promise<Product[]> => {
   const url = search ? `${BASE_URL}?search=${search}` : BASE_URL;

@@ -18,7 +18,7 @@ export default function ProductCard({ product, onEdit, onDelete }: ProductCardPr
         />
       )}
       <h3 className="text-lg font-semibold">{product.name}</h3>
-      <p className="text-gray-600">${product.price.toFixed(2)}</p>
+      <p className="text-gray-600">${Number(product.price).toFixed(2)}</p>
       <p className="text-sm mb-2">{product.category}</p>
       <p className="text-sm mb-2">{product.description}</p>
       <div className="flex justify-between">
