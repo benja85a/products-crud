@@ -1,4 +1,3 @@
-// src/components/ProductCard.tsx
 import type { Product } from '../types/product.types';
 
 interface ProductCardProps {

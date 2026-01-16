@@ -1,5 +1,3 @@
-// src/components/ProductForm.tsx
-
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { productSchema } from '../types/product.types';
@@ -20,8 +18,9 @@ export function ProductForm({ product, onClose, onCreate, onEdit }: ProductFormP
     reset,
   } = useForm<ProductInput>({
     resolver: zodResolver(productSchema),
-    defaultValues: product || {},
+    defaultValues: product,
   });
+  console.log(errors)
 
   const submit = async (data: ProductInput) => {
     try {
@@ -29,7 +28,7 @@ export function ProductForm({ product, onClose, onCreate, onEdit }: ProductFormP
         await onEdit({ ...product, ...data });
       } else if (!product && onCreate) {
         await onCreate(data);
-        reset(); // limpia formulario para crear otro producto
+        reset();
       }
       onClose();
     } catch (error) {
@@ -67,12 +66,13 @@ export function ProductForm({ product, onClose, onCreate, onEdit }: ProductFormP
           Precio
         </label>
         <input
-          id="price"
           type="number"
+          step="0.01"
+          inputMode="decimal"
           {...register('price', { valueAsNumber: true })}
-          placeholder="Precio"
           className={`border p-2 rounded ${errors.price ? 'border-red-500' : 'border-gray-300'}`}
         />
+
         {errors.price && <p className="text-red-500 text-sm">{errors.price.message}</p>}
 
         {/* Categoría */}

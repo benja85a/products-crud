@@ -66,9 +66,7 @@ const ProductsPage = () => {
   const handleEdit = async (updatedProduct: ProductInput) => {
     if (!updatedProduct.id) return;
     const { id, ...data } = updatedProduct;
-    await updateProduct(id, data);
-    await fetchProducts();
-    setEditingProduct(null);
+    await updateProduct(String(id), data); // usamos id directamente
   };
 
   // Eliminar producto
