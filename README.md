@@ -1,78 +1,172 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Products CRUD – Frontend 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada como **prueba técnica Frontend**, cuyo objetivo es consumir una API REST para **listar, buscar y administrar productos**, aplicando buenas prácticas de desarrollo, arquitectura limpia y una experiencia de usuario moderna.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Demo en Producción
 
-## React Compiler
+🔗 **Frontend desplegado en Vercel:**
+(Agrega aquí tu URL de Vercel)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧱 Stack Tecnológico
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **React** (Vite)
+* **TypeScript**
+* **Tailwind CSS**
+* **shadcn/ui** (componentes UI)
+* **Zustand** (estado global)
+* **Axios** (consumo de API)
+* **React Hook Form + Zod** (formularios y validaciones)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Calidad y Buenas Prácticas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+* **ESLint**
+* **Prettier**
+* **Custom Hooks**
+* **Componentes reutilizables**
+* **Lazy Loading / Code Splitting**
+
+### Testing
+
+* **Vitest**
+* **React Testing Library**
+* **Cypress / Playwright** (E2E)
+
+---
+
+## 🧠 Arquitectura del Proyecto
+
+El proyecto sigue una estructura modular y escalable:
+
+```txt
+src/
+ ├─ api/            # Capa de consumo de API
+ ├─ components/     # Componentes reutilizables
+ ├─ hooks/          # Custom hooks (lógica reutilizable)
+ ├─ store/          # Estado global (Zustand)
+ ├─ pages/          # Vistas principales
+ ├─ types/          # Tipos e interfaces TypeScript
+ ├─ App.tsx
+ └─ main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Esta separación permite un código más mantenible, testeable y fácil de escalar.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## ⚙️ Variables de Entorno
+
+Crear un archivo **`.env`** en la raíz del proyecto frontend:
+
+```env
+VITE_API_BASE_URL=http://localhost:3001
 ```
-=======
-# products-crud
-Prueba técnica frontend – CRUD productos
->>>>>>> d637cb1d7305b4b82bae69d6493fc6a033b2e50e
+
+En producción, esta variable debe apuntar a la URL del backend correspondiente.
+
+---
+
+## ▶️ Cómo Correr el Frontend Localmente
+
+### 1. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 2. Ejecutar en modo desarrollo
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔌 Funcionalidades Implementadas
+
+### Funcionalidad Base
+
+* Listado de productos
+* Búsqueda por nombre, descripción o categoría
+* Manejo de estados **Loading / Error**
+
+### Funcionalidad Avanzada (Puntos Extra)
+
+* CRUD completo (Crear, Editar, Eliminar productos)
+* Validación de formularios
+* Estado global con Zustand
+* Custom hooks reutilizables
+* Paginación
+* Diseño responsive
+* Lazy loading
+* Testing unitario y E2E
+* Código formateado con ESLint y Prettier
+
+---
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+npm run test
+```
+
+### E2E Tests
+
+```bash
+npm run test:e2e
+```
+
+Los tests cubren componentes clave y flujos principales de la aplicación.
+
+---
+
+## ☁️ Deployment
+
+### Frontend
+
+El frontend fue desplegado utilizando **Vercel**, aprovechando su integración directa con proyectos React + Vite.
+
+🔗 URL en producción:
+
+```
+(Agrega aquí tu URL de Vercel)
+```
+
+---
+
+## 🖥️ Backend Deployment
+
+El backend fue desarrollado con **Bun + Hono**, siguiendo las instrucciones de la prueba técnica.
+
+Actualmente, **Cloudflare Workers no soporta Bun como runtime de ejecución**, por lo que el backend se mantiene para ejecución local o despliegue en plataformas compatibles con Bun, tales como:
+
+* VPS
+* Fly.io
+* Railway (usando Docker)
+
+Esta decisión se tomó para **preservar la compatibilidad y estabilidad del backend**, evitando modificaciones innecesarias al stack original.
+
+---
+
+## 📄 Notas Finales
+
+* Se priorizó **calidad de código**, **arquitectura limpia** y **buenas prácticas**.
+* El proyecto está pensado para ser fácilmente escalable.
+* El uso de herramientas modernas busca reflejar un entorno de trabajo real.
+
+---
+
+✅ **Autor:** Alexis Benjamin Rivas Bonilla
