@@ -1,13 +1,13 @@
 # Products CRUD – Frontend 🚀
 
-Aplicación web desarrollada como **prueba técnica Frontend**, cuyo objetivo es consumir una API REST para **listar, buscar y administrar productos**, aplicando buenas prácticas de desarrollo, arquitectura limpia y una experiencia de usuario moderna.
+Aplicación web desarrollada como prueba técnica Frontend, cuyo objetivo es consumir una API REST para listar, buscar y administrar productos, aplicando buenas prácticas de desarrollo, arquitectura limpia y una experiencia de usuario moderna.
 
 ---
 
 ## 📌 Demo en Producción
 
-🔗 **Frontend desplegado en Vercel:**
-(Agrega aquí tu URL de Vercel)
+🔗 Frontend desplegado en Vercel:
+https://products-crud-zeta.vercel.app/
 
 ---
 
@@ -15,27 +15,27 @@ Aplicación web desarrollada como **prueba técnica Frontend**, cuyo objetivo es
 
 ### Frontend
 
-* **React** (Vite)
-* **TypeScript**
-* **Tailwind CSS**
-* **shadcn/ui** (componentes UI)
-* **Zustand** (estado global)
-* **Axios** (consumo de API)
-* **React Hook Form + Zod** (formularios y validaciones)
+* React (Vite)
+* TypeScript
+* Tailwind CSS
+* shadcn/ui (componentes UI)
+* Zustand (estado global)
+* Axios (consumo de API)
+* React Hook Form + Zod (formularios y validaciones)
 
 ### Calidad y Buenas Prácticas
 
-* **ESLint**
-* **Prettier**
-* **Custom Hooks**
-* **Componentes reutilizables**
-* **Lazy Loading / Code Splitting**
+* ESLint
+* Prettier
+* Custom Hooks
+* Componentes reutilizables
+* Lazy Loading / Code Splitting
 
 ### Testing
 
-* **Vitest**
-* **React Testing Library**
-* **Cypress / Playwright** (E2E)
+* Vitest
+* React Testing Library
+* Cypress / Playwright (E2E)
 
 ---
 
@@ -59,9 +59,9 @@ Esta separación permite un código más mantenible, testeable y fácil de escal
 
 ---
 
-## ⚙️ Variables de Entorno
+⚙️ Variables de Entorno
 
-Crear un archivo **`.env`** en la raíz del proyecto frontend:
+Crear un archivo `.env` en la raíz del proyecto frontend:
 
 ```env
 VITE_API_BASE_URL=http://localhost:3001
@@ -99,7 +99,7 @@ http://localhost:5173
 
 * Listado de productos
 * Búsqueda por nombre, descripción o categoría
-* Manejo de estados **Loading / Error**
+* Manejo de estados Loading / Error
 
 ### Funcionalidad Avanzada (Puntos Extra)
 
@@ -137,7 +137,7 @@ Los tests cubren componentes clave y flujos principales de la aplicación.
 
 ### Frontend
 
-El frontend fue desplegado utilizando **Vercel**, aprovechando su integración directa con proyectos React + Vite.
+El frontend fue desplegado utilizando Vercel, aprovechando su integración directa con proyectos React + Vite.
 
 🔗 URL en producción:
 
@@ -151,7 +151,7 @@ El frontend fue desplegado utilizando **Vercel**, aprovechando su integración d
 
 El backend fue desarrollado con **Bun + Hono**, siguiendo las instrucciones de la prueba técnica.
 
-Actualmente, **Cloudflare Workers no soporta Bun como runtime de ejecución**, por lo que el backend se mantiene para ejecución local o despliegue en plataformas compatibles con Bun, tales como:
+Actualmente, Cloudflare Workers no soporta Bun como runtime de ejecución, por lo que el backend se mantiene para ejecución local o despliegue en plataformas compatibles con Bun, tales como:
 
 * VPS
 * Fly.io
@@ -163,10 +163,10 @@ Esta decisión se tomó para **preservar la compatibilidad y estabilidad del bac
 
 ## 📄 Notas Finales
 
-* Se priorizó **calidad de código**, **arquitectura limpia** y **buenas prácticas**.
+* Se priorizó calidad de código, arquitectura limpia y buenas prácticas.
 * El proyecto está pensado para ser fácilmente escalable.
 * El uso de herramientas modernas busca reflejar un entorno de trabajo real.
 
 ---
 
-✅ **Autor:** Alexis Benjamin Rivas Bonilla
+✅ Autor: Alexis Benjamin Rivas Bonilla
